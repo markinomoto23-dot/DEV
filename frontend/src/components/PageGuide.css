@@ -1,0 +1,55 @@
+.page-guide {
+  position: relative;
+  display: inline-flex;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.page-guide-button {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  background: #fff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.page-guide-button:hover,
+.page-guide-button:focus-visible {
+  background: #eff6ff;
+  border-color: #60a5fa;
+  outline: none;
+}
+
+.page-guide-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 100;
+  width: min(320px, 80vw);
+  padding: 14px 16px;
+  border: 1px solid #dbe3ec;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.14);
+  color: #334155;
+  text-align: left;
+}
+
+.page-guide-popover strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.page-guide-popover p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}

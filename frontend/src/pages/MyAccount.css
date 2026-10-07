@@ -1,0 +1,403 @@
+* {
+  box-sizing: border-box;
+}
+
+.my-account-page {
+  min-height: 100vh;
+  padding: 32px;
+  background: #f5f7fa;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #172b3d;
+}
+
+.my-account-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.my-account-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #7c3aed;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.my-account-heading {
+  margin-bottom: 26px;
+}
+
+.my-account-heading h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.my-account-heading p {
+  margin: 7px 0 0;
+  color: #7a8795;
+  font-size: 14px;
+}
+
+.my-account-grid {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.account-summary-card,
+.account-card {
+  border: 1px solid #e2e8ef;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.account-summary-card {
+  padding: 28px 22px;
+  text-align: center;
+}
+
+.account-avatar {
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #7c3aed;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.account-summary-card h2 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.account-username {
+  display: block;
+  margin-top: 5px;
+  color: #83909d;
+  font-size: 12px;
+}
+
+.account-role {
+  width: max-content;
+  max-width: 100%;
+  margin: 16px auto 0;
+  padding: 7px 11px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  background: #f5f3ff;
+  color: #7c3aed;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.account-summary-divider {
+  height: 1px;
+  margin: 24px 0;
+  background: #edf0f3;
+}
+
+.account-status-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.account-status-row span {
+  color: #7a8795;
+}
+
+.account-status-row strong.active {
+  color: #24865d;
+}
+
+.account-status-row strong.inactive {
+  color: #c13f3f;
+}
+
+.account-content {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.account-card {
+  padding: 24px;
+}
+
+.account-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.account-card-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.account-card-header h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.account-card-header p {
+  margin: 5px 0 0;
+  color: #84909d;
+  font-size: 11px;
+}
+
+.account-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.account-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.account-field.full {
+  grid-column: 1 / -1;
+}
+
+.account-field label {
+  color: #415466;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.account-field input {
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #d9e2ea;
+  border-radius: 7px;
+  outline: none;
+  background: #ffffff;
+  color: #172b3d;
+  font-size: 13px;
+}
+
+.account-field input:focus {
+  border-color: #6095bd;
+  box-shadow: 0 0 0 3px rgba(32, 93, 144, 0.08);
+}
+
+.account-field input:disabled {
+  background: #f4f6f8;
+  color: #7d8995;
+  cursor: not-allowed;
+}
+
+.account-field small {
+  color: #98a3ad;
+  font-size: 10px;
+}
+
+.account-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 22px;
+}
+
+.account-primary-btn {
+  min-height: 42px;
+  padding: 0 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 7px;
+  background: #7c3aed;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.account-primary-btn:hover:not(:disabled) {
+  background: #5b21b6;
+}
+
+.account-primary-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.account-message {
+  margin-bottom: 18px;
+  padding: 11px 13px;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.account-message.success {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #bbdfce;
+  background: #eef9f3;
+  color: #237451;
+}
+
+.account-message.error {
+  border: 1px solid #fecaca;
+  background: #fff1f2;
+  color: #b42318;
+}
+
+.account-password-fields {
+  display: grid;
+  gap: 18px;
+}
+
+.account-password-input {
+  position: relative;
+}
+
+.account-password-input input {
+  padding-right: 44px;
+}
+
+.account-password-input button {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: #6d7d8c;
+  cursor: pointer;
+}
+
+.my-account-loading {
+  padding: 60px;
+  border: 1px solid #e2e8ef;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #7a8795;
+  text-align: center;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+  .my-account-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .account-summary-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 18px;
+    text-align: left;
+  }
+
+  .account-avatar {
+    grid-row: 1 / 5;
+    margin: 0;
+  }
+
+  .account-role {
+    margin: 12px 0 0;
+  }
+
+  .account-summary-divider {
+    display: none;
+  }
+
+  .account-status-row {
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 620px) {
+  .my-account-page {
+    padding: 20px 14px;
+  }
+
+  .my-account-heading h1 {
+    font-size: 24px;
+  }
+
+  .account-card {
+    padding: 18px;
+  }
+
+  .account-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .account-field.full {
+    grid-column: auto;
+  }
+
+  .account-actions {
+    justify-content: stretch;
+  }
+
+  .account-primary-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .my-account-page {
+    padding: 16px 10px;
+  }
+
+  .account-summary-card {
+    display: block;
+    text-align: center;
+  }
+
+  .account-avatar {
+    margin: 0 auto 14px;
+  }
+
+  .account-role {
+    margin: 12px auto 0;
+  }
+
+  .account-status-row {
+    justify-content: center;
+    gap: 10px;
+  }
+}

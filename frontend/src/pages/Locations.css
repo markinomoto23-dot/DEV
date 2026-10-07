@@ -1,0 +1,503 @@
+* {
+  box-sizing: border-box;
+}
+
+.locations-page {
+  min-height: 100vh;
+  padding: 32px 4%;
+  background: #f5f7fa;
+  color: #172b3d;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.locations-header {
+  max-width: 1400px;
+  margin: 0 auto 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.locations-back {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0;
+  margin-bottom: 18px;
+  border: none;
+  background: transparent;
+  color: #8b5cf6;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.locations-back:hover {
+  text-decoration: underline;
+}
+
+.locations-header h1 {
+  margin: 0;
+  color: #172b3d;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.locations-header p {
+  margin: 8px 0 0;
+  color: #7c8794;
+  font-size: 14px;
+}
+
+.add-location-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 7px;
+  background: #8b5cf6;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.add-location-btn:hover {
+  background: #6d28d9;
+}
+
+.locations-card {
+  max-width: 1400px;
+  min-height: 490px;
+  margin: 0 auto;
+  padding: 23px;
+  border: 1px solid #e1e7ec;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.locations-toolbar {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.location-search {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 9px 8px 14px;
+  border: 1px solid #d8e0e7;
+  border-radius: 8px;
+  background: white;
+}
+
+.location-search svg {
+  flex-shrink: 0;
+  color: #8795a3;
+}
+
+.location-search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #273b4c;
+  font-size: 14px;
+}
+
+.location-search input::placeholder {
+  color: #99a5b1;
+}
+
+.location-search button {
+  padding: 9px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #8b5cf6;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+.location-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 170px;
+  color: #687785;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.location-filter select {
+  min-height: 42px;
+  padding: 0 36px 0 12px;
+  border: 1px solid #d8e0e7;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  cursor: pointer;
+}
+
+.location-filter select:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(39, 104, 157, 0.1);
+}
+
+/* Keep the search anchored on the left and push the filters to the right. */
+.location-customer-filter {
+  width: 220px;
+  margin-left: auto;
+}
+
+.location-status-filter {
+  width: 170px;
+}
+
+.clear-location-search {
+  border: none;
+  background: transparent;
+  color: #8b5cf6;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.locations-error,
+.location-modal-error {
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  background: #fff1f2;
+  color: #b42318;
+  font-size: 13px;
+}
+
+.locations-empty {
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #909ca8;
+  text-align: center;
+}
+
+.locations-empty h3 {
+  margin: 15px 0 6px;
+  color: #334155;
+  font-size: 17px;
+}
+
+.locations-empty p {
+  margin: 0;
+  color: #8a96a2;
+  font-size: 14px;
+}
+
+.locations-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.locations-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+}
+
+.locations-table th {
+  padding: 13px;
+  border-bottom: 1px solid #e7ecf0;
+  color: #788593;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.locations-table td {
+  padding: 15px 13px;
+  border-bottom: 1px solid #edf1f4;
+  color: #334155;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.locations-table tbody tr:hover {
+  background: #f9fbfc;
+}
+
+.location-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.location-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: #edf4fa;
+  color: #8b5cf6;
+}
+
+.location-customer {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.location-customer svg {
+  color: #7b8996;
+}
+
+.location-status {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.location-status.active {
+  background: #e7f5ee;
+  color: #23835c;
+}
+
+.location-status.inactive {
+  background: #eef1f4;
+  color: #6b7280;
+}
+
+.location-status.credit-hold,
+.credit_hold {
+  background: #fff0f0;
+  color: #b94040;
+}
+
+.location-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.location-actions button {
+  width: 33px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.location-edit-btn {
+  border: 1px solid #d5e2ec;
+  background: #f5f9fc;
+  color: #8b5cf6;
+}
+
+.location-edit-btn:hover {
+  background: #eaf3f9;
+}
+
+.location-delete-btn {
+  border: 1px solid #f1d2d2;
+  background: #fff5f5;
+  color: #c14343;
+}
+
+.location-delete-btn:hover {
+  background: #feecec;
+}
+
+/* MODAL */
+
+.location-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: rgba(17, 31, 45, 0.5);
+  overflow-y: auto;
+}
+
+.location-modal {
+  width: 100%;
+  max-width: 760px;
+  max-height: 92vh;
+  padding: 26px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 25px 75px rgba(0, 0, 0, 0.22);
+  overflow-y: auto;
+}
+
+.location-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.location-modal-header h2 {
+  margin: 0;
+  color: #172b3d;
+  font-size: 22px;
+}
+
+.location-modal-header p {
+  margin: 6px 0 0;
+  color: #86919d;
+  font-size: 13px;
+}
+
+.location-modal-close {
+  border: none;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.location-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.location-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-field.full {
+  grid-column: 1 / -1;
+}
+
+.location-field label {
+  margin-bottom: 7px;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.location-field input,
+.location-field select,
+.location-field textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #d2dbe3;
+  border-radius: 7px;
+  outline: none;
+  background: white;
+  color: #263746;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.location-field textarea {
+  resize: vertical;
+}
+
+.location-field input:focus,
+.location-field select:focus,
+.location-field textarea:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(39, 104, 157, 0.09);
+}
+
+.location-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid #edf0f3;
+}
+
+.location-modal-actions button {
+  padding: 11px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.location-cancel-btn {
+  border: 1px solid #d4dce4;
+  background: white;
+  color: #475569;
+}
+
+.location-save-btn {
+  border: none;
+  background: #8b5cf6;
+  color: white;
+}
+
+.location-save-btn:hover {
+  background: #6d28d9;
+}
+
+@media (max-width: 760px) {
+  .locations-page {
+    padding: 20px;
+  }
+
+  .locations-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .locations-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .location-search {
+    max-width: none;
+  }
+
+  .location-customer-filter,
+  .location-status-filter {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .location-customer-filter select,
+  .location-status-filter select {
+    width: 100%;
+  }
+
+  .location-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-field.full {
+    grid-column: auto;
+  }
+
+  .location-modal {
+    padding: 20px;
+  }
+}

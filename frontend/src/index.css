@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* DEV environment marker */
+.dev-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #7c3aed;
+  color: #ffffff;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: .08em;
+  vertical-align: middle;
+  box-shadow: 0 3px 10px rgba(124, 58, 237, .2);
+}

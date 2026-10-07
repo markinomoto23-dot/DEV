@@ -1,0 +1,46 @@
+# =========================
+# PYTHON / DJANGO
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+backend/venv/
+backend/.venv/
+venv/
+.venv/
+
+# Local SQLite database
+backend/db.sqlite3
+
+# Local ticket attachments
+backend/media/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# =========================
+# REACT / VITE
+# =========================
+frontend/node_modules/
+frontend/dist/
+
+# =========================
+# EDITOR / OS
+# =========================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# =========================
+# LOGS
+# =========================
+*.log
+
+# Local notification scheduler
+backend/run_notifications.bat

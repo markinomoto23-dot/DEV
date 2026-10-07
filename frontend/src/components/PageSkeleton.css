@@ -1,0 +1,140 @@
+.page-skeleton {
+  min-height: 100%;
+  padding: 28px 32px 36px;
+  background: #f4f7fa;
+}
+
+.page-skeleton-block {
+  background: linear-gradient(
+    90deg,
+    #e7edf2 25%,
+    #f3f6f8 37%,
+    #e7edf2 63%
+  );
+  background-size: 400% 100%;
+  animation: page-skeleton-shimmer 1.35s ease infinite;
+  border-radius: 8px;
+}
+
+.page-skeleton-header,
+.page-skeleton-filters {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.page-skeleton-header {
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.page-skeleton-title {
+  width: 220px;
+  height: 28px;
+  margin-bottom: 10px;
+}
+
+.page-skeleton-subtitle {
+  width: 340px;
+  height: 14px;
+}
+
+.page-skeleton-action {
+  width: 126px;
+  height: 40px;
+}
+
+.page-skeleton-filters {
+  margin-bottom: 22px;
+}
+
+.page-skeleton-search {
+  flex: 1;
+  max-width: 520px;
+  height: 42px;
+}
+
+.page-skeleton-filter {
+  width: 200px;
+  height: 42px;
+}
+
+.page-skeleton-filter.small {
+  width: 150px;
+}
+
+.page-skeleton-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.page-skeleton-card {
+  height: 110px;
+}
+
+.page-skeleton-table {
+  background: #ffffff;
+  border: 1px solid #e0e7ed;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.page-skeleton-table-row {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px;
+  padding: 18px 20px;
+  border-top: 1px solid #edf1f4;
+}
+
+.page-skeleton-table-row.header {
+  border-top: 0;
+  background: #f8fafb;
+}
+
+.page-skeleton-table-row .page-skeleton-block {
+  width: 78%;
+  height: 14px;
+}
+
+.page-skeleton-table-row.header .page-skeleton-block {
+  width: 58%;
+  height: 12px;
+}
+
+@keyframes page-skeleton-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .page-skeleton {
+    padding: 22px 18px 28px;
+  }
+
+  .page-skeleton-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-skeleton-filters {
+    flex-wrap: wrap;
+  }
+
+  .page-skeleton-search {
+    flex-basis: 100%;
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-skeleton-block {
+    animation: none;
+  }
+}

@@ -1,0 +1,23 @@
+[project]
+name = "expert-technologies-backend"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "asgiref==3.12.1",
+    "dj-database-url==3.1.2",
+    "Django==6.1",
+    "django-cors-headers==4.9.0",
+    "djangorestframework==3.18.0",
+    "djangorestframework-simplejwt==5.5.1",
+    "psycopg[binary]==3.3.4",
+    "PyJWT==2.13.0",
+    "python-dotenv==1.2.3",
+    "sqlparse==0.5.5",
+    "tzdata==2026.3",
+]
+
+# Vercel runs this during deployment before serving the new Django build.
+# The affected APIs (locations/equipment/tickets) depend on newer schema
+# migrations, so production must be migrated whenever a new build ships.
+[tool.vercel.scripts]
+build = 'if [ -n "$DATABASE_URL$POSTGRES_URL$DATABASE_URL_UNPOOLED" ]; then python manage.py migrate --noinput; fi'
