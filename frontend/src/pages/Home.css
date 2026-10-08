@@ -1,2022 +1,1134 @@
 * {
-
   box-sizing: border-box;
-
 }
-
-
 
 body {
-
   margin: 0;
-
 }
-
-
-
 
 
 /* =========================================
-
    PAGE
-
 ========================================= */
 
-
-
 .home-page {
-
   min-height: 100vh;
 
-
-
   display: flex;
-
   flex-direction: column;
-
-
 
   overflow-x: hidden;
 
-
-
   background:
-
     radial-gradient(
-
       circle at 8% 18%,
-
       rgba(84, 188, 236, 0.22),
-
       transparent 34%
-
     ),
-
     radial-gradient(
-
       circle at 90% 78%,
-
       rgba(39, 104, 157, 0.14),
-
       transparent 33%
-
     ),
-
     linear-gradient(
-
       135deg,
-
       #f7fbff 0%,
-
       #e8f4fc 48%,
-
       #edf6fb 100%
-
     );
-
-
 
   color: #172b3d;
 
-
-
   font-family:
-
     Arial,
-
     Helvetica,
-
     sans-serif;
-
 }
-
-
-
 
 
 /* =========================================
-   NAVBAR — DEV SERVICE MANAGEMENT SYSTEM
-   ========================================= */
-.home-page .home-navbar {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  min-height: 98px;
-  padding: 18px max(24px, calc((100vw - 1200px) / 2 + 32px));
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background: linear-gradient(108deg, #fff 0%, #fcfaff 58%, #efe9ff 100%);
-  border-bottom: 1px solid rgba(118, 75, 207, .12);
-}
-.home-page .home-navbar .home-brand-modern {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: clamp(10px, 1.8vw, 24px);
-  padding: 0;
-  margin: 0;
-  max-width: 100%;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  cursor: pointer;
-  text-align: left;
-  font-family: inherit;
-}
-.home-page .home-navbar .home-brand-dev {
-  display: inline-block;
-  flex: 0 0 auto;
-  font-size: clamp(36px, 4vw, 58px);
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: -2.8px;
-  line-height: 1;
-  white-space: nowrap;
-  color: #6415d6;
-  background: linear-gradient(135deg, #8b44ff, #4c0cbe);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-transform: none;
-}
-.home-page .home-navbar .home-brand-divider {
-  display: block;
-  flex: 0 0 2px;
-  width: 2px;
-  height: 38px;
-  border-radius: 8px;
-  background: #bc9bf4;
-}
-.home-page .home-navbar .home-brand-subtitle {
-  display: block;
-  width: auto;
-  color: #293553;
-  font-size: clamp(11px, 1.2vw, 16px);
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: clamp(1px, .2vw, 2.8px);
-  line-height: 1.5;
-  white-space: normal;
-  text-transform: uppercase;
-}
-@media (max-width: 620px) {
-  .home-page .home-navbar {
-    min-height: 75px;
-    padding: 14px 18px;
-  }
-  .home-page .home-navbar .home-brand-modern {gap: 10px;}
-  .home-page .home-navbar .home-brand-dev {font-size: 33px; letter-spacing: -1.7px;}
-  .home-page .home-navbar .home-brand-divider {height: 30px;}
-  .home-page .home-navbar .home-brand-subtitle {display: block; font-size: 10px; letter-spacing: .75px;}
-}
-@media (max-width: 360px) {
-  .home-page .home-navbar .home-brand-subtitle {font-size: 9px; letter-spacing: .3px;}
-}
-
-/* =========================================
-
-   HERO
-
+   NAVBAR
 ========================================= */
 
-
-
-.home-hero {
-
+.home-navbar {
   width: 100%;
-
   max-width: 1200px;
-
-
-
-  flex: 1;
-
-
 
   margin: 0 auto;
 
-
-
-  padding: 70px 32px 80px;
-
-
-
-  display: grid;
-
-
-
-  grid-template-columns:
-
-    1fr 1fr;
-
-
-
-  align-items: center;
-
-
-
-  gap: 80px;
-
-}
-
-
-
-
-
-/* =========================================
-
-   LEFT CONTENT
-
-========================================= */
-
-
-
-.home-hero-content {
-
-  max-width: 530px;
-
-
-
-  animation:
-
-    heroTextEnter
-
-    0.8s ease
-
-    both;
-
-}
-
-
-
-
-
-.home-eyebrow {
-
-  width: max-content;
-
-
-
-  margin-bottom: 18px;
-
-
-
-  padding: 7px 12px;
-
-
-
-  border: 1px solid
-
-    rgba(32, 93, 144, 0.15);
-
-
-
-  border-radius: 20px;
-
-
-
-  background:
-
-    rgba(255, 255, 255, 0.55);
-
-
-
-  color: #7c3aed;
-
-
-
-  font-size: 11px;
-
-  font-weight: 700;
-
-
-
-  letter-spacing: 0.8px;
-
-
-
-  text-transform: uppercase;
-
-}
-
-
-
-
-
-.home-hero h1 {
-
-  margin: 0;
-
-
-
-  color: #123754;
-
-
-
-  font-size: clamp(
-
-    48px,
-
-    5vw,
-
-    72px
-
-  );
-
-
-
-  line-height: 0.98;
-
-
-
-  letter-spacing: -3px;
-
-}
-
-
-
-
-
-.home-hero h1 span {
-
-  display: block;
-
-
-
-  margin-top: 8px;
-
-
-
-  color: #8b5cf6;
-
-}
-
-
-
-
-
-.home-description {
-
-  max-width: 510px;
-
-
-
-  margin: 25px 0 0;
-
-
-
-  color: #5f7181;
-
-
-
-  font-size: 17px;
-
-
-
-  line-height: 1.65;
-
-}
-
-
-
-
-
-/* =========================================
-
-   HERO BUTTONS
-
-========================================= */
-
-
-
-.home-hero-actions {
-
-  margin-top: 30px;
-
-
+  padding: 28px 32px;
 
   display: flex;
-
-
-
-  gap: 13px;
-
+  align-items: center;
+  justify-content: space-between;
 }
 
 
+.home-brand {
+  display: flex;
+  align-items: center;
 
+  gap: 12px;
 
+  padding: 0;
 
-.home-primary-btn,
+  border: none;
 
-.home-secondary-btn {
-
-  min-height: 46px;
-
-
-
-  padding: 0 20px;
-
-
-
-  border-radius: 8px;
-
-
-
-  font-size: 13px;
-
-  font-weight: 700;
-
-
+  background: transparent;
 
   cursor: pointer;
 
-
-
-  transition:
-
-    transform 0.2s ease,
-
-    box-shadow 0.2s ease,
-
-    background 0.2s ease;
-
+  text-align: left;
 }
 
 
+.home-brand img {
+  width: 54px;
+  height: 54px;
 
+  object-fit: contain;
+}
+
+
+.home-brand div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.home-brand strong {
+  color: #4c1d95;
+
+  font-size: 16px;
+}
+
+
+.home-brand span {
+  color: #7b8996;
+
+  font-size: 10px;
+
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   NAV ACTIONS
+========================================= */
+
+.home-nav-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.home-login-btn,
+.home-register-btn {
+  height: 40px;
+
+  padding: 0 20px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.home-login-btn {
+  border: 1px solid #c8d9e7;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.7
+  );
+
+  color: #4c1d95;
+}
+
+
+.home-register-btn {
+  border: 1px solid #7c3aed;
+
+  background: #7c3aed;
+
+  color: white;
+
+  box-shadow:
+    0 8px 20px
+    rgba(32, 93, 144, 0.18);
+}
+
+
+.home-login-btn:hover,
+.home-register-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+.home-login-btn:hover {
+  background: #ffffff;
+}
+
+
+.home-register-btn:hover {
+  background: #5b21b6;
+
+  box-shadow:
+    0 12px 28px
+    rgba(32, 93, 144, 0.25);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.home-hero {
+  width: 100%;
+  max-width: 1200px;
+
+  flex: 1;
+
+  margin: 0 auto;
+
+  padding: 70px 32px 80px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  align-items: center;
+
+  gap: 80px;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.home-hero-content {
+  max-width: 530px;
+
+  animation:
+    heroTextEnter
+    0.8s ease
+    both;
+}
+
+
+.home-eyebrow {
+  width: max-content;
+
+  margin-bottom: 18px;
+
+  padding: 7px 12px;
+
+  border: 1px solid
+    rgba(32, 93, 144, 0.15);
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.55);
+
+  color: #7c3aed;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+}
+
+
+.home-hero h1 {
+  margin: 0;
+
+  color: #123754;
+
+  font-size: clamp(
+    48px,
+    5vw,
+    72px
+  );
+
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+}
+
+
+.home-hero h1 span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #8b5cf6;
+}
+
+
+.home-description {
+  max-width: 510px;
+
+  margin: 25px 0 0;
+
+  color: #5f7181;
+
+  font-size: 17px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.home-hero-actions {
+  margin-top: 30px;
+
+  display: flex;
+
+  gap: 13px;
+}
+
+
+.home-primary-btn,
+.home-secondary-btn {
+  min-height: 46px;
+
+  padding: 0 20px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
 
 
 .home-primary-btn {
-
   border: 1px solid #7c3aed;
-
-
 
   background: #7c3aed;
 
-
-
   color: white;
 
-
-
   box-shadow:
-
     0 10px 24px
-
     rgba(32, 93, 144, 0.2);
-
 }
-
-
-
 
 
 .home-primary-btn:hover {
-
   background: #5b21b6;
-
-
 
   transform: translateY(-2px);
 
-
-
   box-shadow:
-
     0 14px 30px
-
     rgba(32, 93, 144, 0.28);
-
 }
-
-
-
 
 
 .home-secondary-btn {
-
   border: 1px solid #c4b5fd;
 
-
-
   background:
-
     rgba(255, 255, 255, 0.6);
 
-
-
   color: #26475f;
-
 }
-
-
-
 
 
 .home-secondary-btn:hover {
-
   background: white;
 
-
-
   transform: translateY(-2px);
-
 }
 
 
-
-
-
 /* =========================================
-
    FEATURES
-
 ========================================= */
 
-
-
 .home-feature-row {
-
   margin-top: 38px;
 
-
-
   display: flex;
-
   flex-wrap: wrap;
-
-
 
   gap: 22px;
 
-
-
   color: #526d81;
-
 }
-
-
-
 
 
 .home-feature-row div {
-
   display: flex;
-
   align-items: center;
-
-
 
   gap: 7px;
 
-
-
   font-size: 11px;
-
   font-weight: 600;
 
-
-
   transition:
-
     transform 0.2s ease,
-
     color 0.2s ease;
-
 }
-
-
-
 
 
 .home-feature-row div:hover {
-
   transform: translateY(-2px);
 
-
-
   color: #7c3aed;
-
 }
-
-
-
 
 
 .home-feature-row svg {
-
   color: #8b5cf6;
-
 }
 
 
-
-
-
 /* =========================================
-
    RIGHT VISUAL
-
 ========================================= */
 
-
-
 .home-visual {
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
-
 
   perspective: 1000px;
 
-
-
   animation:
-
     heroVisualEnter
-
     0.9s ease
-
     both;
-
 }
-
-
-
 
 
 .visual-card {
-
   position: relative;
 
-
-
   width: 100%;
-
   max-width: 500px;
-
   height: 350px;
-
-
 
   overflow: hidden;
 
-
-
   border: 1px solid
-
     rgba(255, 255, 255, 0.2);
-
-
 
   border-radius: 28px;
 
-
-
   background:
-
     linear-gradient(
-
       145deg,
-
       #235f91 0%,
-
       #16486f 100%
-
     );
 
-
-
   box-shadow:
-
     0 35px 80px
-
     rgba(24, 67, 105, 0.25);
-
-
 
   transform-style: preserve-3d;
 
-
-
   animation:
-
     visualCardFloat
-
     6s ease-in-out
-
     infinite;
 
-
-
   transition:
-
     box-shadow 0.35s ease;
-
 }
-
-
-
 
 
 .visual-card:hover {
-
   box-shadow:
-
     0 45px 95px
-
     rgba(24, 67, 105, 0.32);
-
 }
 
 
-
-
-
 /* =========================================
-
    GRID
-
 ========================================= */
 
-
-
 .visual-grid {
-
   position: absolute;
-
-
 
   inset: 0;
 
-
-
   opacity: 0.12;
 
-
-
   background-image:
-
     linear-gradient(
-
       rgba(255, 255, 255, 0.35) 1px,
-
       transparent 1px
-
     ),
-
     linear-gradient(
-
       90deg,
-
       rgba(255, 255, 255, 0.35) 1px,
-
       transparent 1px
-
     );
 
-
-
   background-size:
-
     42px 42px;
 
-
-
   animation:
-
     gridPulse
-
     5s ease-in-out
-
     infinite;
-
 }
-
-
-
 
 
 /* =========================================
-
    CIRCLES
-
 ========================================= */
 
-
-
 .visual-circle {
-
   position: absolute;
 
-
-
   border: 1px solid
-
     rgba(255, 255, 255, 0.17);
 
-
-
   border-radius: 50%;
-
 }
-
-
-
 
 
 .visual-circle-one {
-
   width: 145px;
-
   height: 145px;
 
-
-
   left: 45px;
-
   top: 45px;
 
-
-
   animation:
-
     circleOneMove
-
     11s ease-in-out
-
     infinite;
-
 }
-
-
-
 
 
 .visual-circle-two {
-
   width: 200px;
-
   height: 200px;
 
-
-
   right: 35px;
-
   bottom: 20px;
 
-
-
   animation:
-
     circleTwoMove
-
     14s ease-in-out
-
     infinite;
-
 }
 
 
-
-
-
 /* =========================================
-
    MAIN ICON
-
 ========================================= */
 
-
-
 .visual-main-icon {
-
   position: absolute;
 
-
-
   top: 50%;
-
   left: 50%;
 
-
-
   width: 155px;
-
   height: 190px;
 
-
-
   transform:
-
     translate(
-
       -50%,
-
       -50%
-
     );
 
-
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-
 
   border-radius: 30px;
 
-
-
   background:
-
     rgba(
-
       248,
-
       253,
-
       255,
-
       0.95
-
     );
-
-
 
   color: #7c3aed;
 
-
-
   box-shadow:
-
     0 20px 50px
-
     rgba(7, 34, 54, 0.22);
 
-
-
   animation:
-
     mainIconFloat
-
     4s ease-in-out
-
     infinite;
-
 }
 
 
-
-
-
 /* =========================================
-
    SHIELD
-
 ========================================= */
 
-
-
 .visual-check {
-
   position: absolute;
 
-
-
   right: -28px;
-
   bottom: 35px;
 
-
-
   width: 82px;
-
   height: 82px;
 
-
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
-
-
   border: 8px solid
-
     #f7fcff;
-
-
 
   border-radius: 50%;
 
-
-
   background: #7c3aed;
-
-
 
   color: white;
 
-
-
   animation:
-
     shieldPulse
-
     2.5s ease-in-out
-
     infinite;
-
 }
-
-
-
 
 
 /* =========================================
-
    FLOATING CARDS
-
 ========================================= */
 
-
-
 .visual-floating-card {
-
   position: absolute;
-
-
 
   min-width: 150px;
 
-
-
   padding: 11px 13px;
 
-
-
   display: flex;
-
   align-items: center;
-
-
 
   gap: 9px;
 
-
-
   border:
-
     1px solid
-
     rgba(
-
       255,
-
       255,
-
       255,
-
       0.25
-
     );
-
-
 
   border-radius: 12px;
 
-
-
   background:
-
     rgba(
-
       255,
-
       255,
-
       255,
-
       0.92
-
     );
-
-
 
   box-shadow:
-
     0 12px 30px
-
     rgba(
-
       13,
-
       50,
-
       77,
-
       0.18
-
     );
-
-
 
   color: #7c3aed;
 
-
-
   transition:
-
     box-shadow 0.25s ease;
-
 }
-
-
-
 
 
 .visual-floating-card:hover {
-
   box-shadow:
-
     0 18px 38px
-
     rgba(
-
       13,
-
       50,
-
       77,
-
       0.27
-
     );
-
 }
-
-
-
 
 
 .visual-floating-card div {
-
   display: flex;
-
   flex-direction: column;
-
 }
-
-
-
 
 
 .visual-floating-card strong {
-
   color: #1f415a;
 
-
-
   font-size: 11px;
-
 }
-
-
-
 
 
 .visual-floating-card span {
-
   margin-top: 2px;
-
-
 
   color: #84929e;
 
-
-
   font-size: 9px;
-
 }
-
-
-
 
 
 /* CUSTOMERS */
 
-
-
 .customer-card {
-
   left: 22px;
-
   bottom: 34px;
 
-
-
   animation:
-
     customerFloat
-
     4.5s ease-in-out
-
     infinite;
-
 }
-
-
-
 
 
 /* LOCATIONS */
 
-
-
 .location-card {
-
   right: 20px;
-
   top: 34px;
 
-
-
   animation:
-
     locationFloat
-
     5s ease-in-out
-
     infinite;
-
 }
-
-
-
 
 
 /* TICKETS */
 
-
-
 .ticket-card {
-
   right: 28px;
-
   bottom: 38px;
 
-
-
   animation:
-
     ticketFloat
-
     4.2s ease-in-out
-
     infinite;
-
 }
 
 
-
-
-
 /* =========================================
-
    FOOTER
-
 ========================================= */
 
-
-
 .home-footer {
-
   width: 100%;
-
-
 
   padding: 20px 32px;
 
-
-
   display: flex;
-
   justify-content: center;
-
-
 
   gap: 12px;
 
-
-
   color: #8393a0;
 
-
-
   font-size: 10px;
-
 }
-
-
-
 
 
 .home-footer span:first-child {
-
   color: #47677f;
 
-
-
   font-weight: 700;
-
 }
-
-
-
 
 
 /* =========================================
-
    ANIMATIONS
-
 ========================================= */
 
-
-
 @keyframes heroTextEnter {
-
   from {
-
     opacity: 0;
 
-
-
     transform:
-
       translateX(-35px);
-
   }
-
-
 
   to {
-
     opacity: 1;
 
-
-
     transform:
-
       translateX(0);
-
   }
-
 }
-
-
-
 
 
 @keyframes heroVisualEnter {
-
   from {
-
     opacity: 0;
 
-
-
     transform:
-
       translateX(40px)
-
       scale(0.96);
-
   }
-
-
 
   to {
-
     opacity: 1;
 
-
-
     transform:
-
       translateX(0)
-
       scale(1);
-
   }
-
 }
-
-
-
 
 
 @keyframes visualCardFloat {
-
   0%,
-
   100% {
-
     transform:
-
       translateY(0);
-
   }
-
-
 
   50% {
-
     transform:
-
       translateY(-8px);
-
   }
-
 }
-
-
-
 
 
 @keyframes mainIconFloat {
-
   0%,
-
   100% {
-
     transform:
-
       translate(-50%, -50%)
-
       translateY(0);
-
   }
-
-
 
   50% {
-
     transform:
-
       translate(-50%, -50%)
-
       translateY(-10px);
-
   }
-
 }
-
-
-
 
 
 @keyframes shieldPulse {
-
   0%,
-
   100% {
-
     transform:
-
       scale(1);
 
-
-
     box-shadow:
-
       0 0 0
-
       rgba(255, 255, 255, 0);
-
   }
-
-
 
   50% {
-
     transform:
-
       scale(1.08);
 
-
-
     box-shadow:
-
       0 0 26px
-
       rgba(255, 255, 255, 0.28);
-
   }
-
 }
-
-
-
 
 
 @keyframes customerFloat {
-
   0%,
-
   100% {
-
     transform:
-
       translate(0, 0);
-
   }
-
-
 
   50% {
-
     transform:
-
       translate(8px, -8px);
-
   }
-
 }
-
-
-
 
 
 @keyframes locationFloat {
-
   0%,
-
   100% {
-
     transform:
-
       translate(0, 0);
-
   }
-
-
 
   50% {
-
     transform:
-
       translate(-8px, 7px);
-
   }
-
 }
-
-
-
 
 
 @keyframes ticketFloat {
-
   0%,
-
   100% {
-
     transform:
-
       translate(0, 0);
-
   }
-
-
 
   50% {
-
     transform:
-
       translate(-6px, -9px);
-
   }
-
 }
-
-
-
 
 
 @keyframes circleOneMove {
-
   0%,
-
   100% {
-
     transform:
-
       translate(0, 0)
-
       scale(1);
-
   }
-
-
 
   50% {
-
     transform:
-
       translate(18px, 12px)
-
       scale(1.08);
-
   }
-
 }
-
-
-
 
 
 @keyframes circleTwoMove {
-
   0%,
-
   100% {
-
     transform:
-
       translate(0, 0)
-
       scale(1);
-
   }
-
-
 
   50% {
-
     transform:
-
       translate(-16px, -12px)
-
       scale(0.95);
-
   }
-
 }
-
-
-
 
 
 @keyframes gridPulse {
-
   0%,
-
   100% {
-
     opacity: 0.08;
-
   }
-
-
 
   50% {
-
     opacity: 0.17;
-
   }
-
 }
-
-
-
 
 
 /* =========================================
-
    RESPONSIVE
-
 ========================================= */
-
-
 
 @media (max-width: 950px) {
 
-
-
   .home-hero {
-
     grid-template-columns: 1fr;
-
-
 
     gap: 55px;
 
-
-
     padding-top: 40px;
-
   }
-
-
-
 
 
   .home-hero-content {
-
     max-width: none;
 
-
-
     text-align: center;
-
   }
-
-
-
 
 
   .home-eyebrow {
-
     margin-left: auto;
-
     margin-right: auto;
-
   }
-
-
-
 
 
   .home-description {
-
     margin-left: auto;
-
     margin-right: auto;
-
   }
-
-
-
 
 
   .home-hero-actions {
-
     justify-content: center;
-
   }
-
-
-
 
 
   .home-feature-row {
-
     justify-content: center;
-
   }
-
-
-
 
 
   .visual-card {
-
     max-width: 560px;
-
   }
 
-
-
 }
-
-
-
 
 
 @media (max-width: 620px) {
 
-
-
   .home-navbar {
-
     padding:
-
       20px 18px;
-
   }
 
 
+  .home-brand strong {
+    font-size: 14px;
+  }
 
+
+  .home-brand span {
+    display: none;
+  }
+
+
+  .home-brand img {
+    width: 44px;
+    height: 44px;
+  }
 
 
   .home-nav-actions {
-
     gap: 7px;
-
   }
-
-
-
 
 
   .home-login-btn,
-
   .home-register-btn {
-
     height: 37px;
-
-
 
     padding: 0 12px;
 
-
-
     font-size: 12px;
-
   }
-
-
-
 
 
   .home-hero {
-
     padding:
-
       45px 20px 60px;
-
   }
-
-
-
 
 
   .home-hero h1 {
-
     font-size: 47px;
 
-
-
     letter-spacing: -2px;
-
   }
-
-
-
 
 
   .home-description {
-
     font-size: 15px;
-
   }
-
-
-
 
 
   .home-hero-actions {
-
     flex-direction: column;
-
   }
-
-
-
 
 
   .home-primary-btn,
-
   .home-secondary-btn {
-
     width: 100%;
-
   }
-
-
-
 
 
   .home-feature-row {
-
     gap: 13px;
-
   }
-
-
-
 
 
   .visual-card {
-
     height: 310px;
 
-
-
     border-radius: 22px;
-
   }
-
-
-
 
 
   .visual-floating-card {
-
     display: none;
-
   }
-
-
-
 
 
   .home-footer {
-
     flex-direction: column;
-
-
 
     align-items: center;
 
-
-
     gap: 4px;
-
   }
 
-
-
 }
-
-
-
 
 
 /* =========================================
-
    REDUCED MOTION
-
 ========================================= */
 
-
-
 @media (
-
   prefers-reduced-motion:
-
   reduce
-
 ) {
 
-
-
   .home-hero-content,
-
   .home-visual,
-
   .visual-card,
-
   .visual-main-icon,
-
   .visual-check,
-
   .customer-card,
-
   .location-card,
-
   .ticket-card,
-
   .visual-circle-one,
-
   .visual-circle-two,
-
   .visual-grid {
-
     animation: none !important;
-
   }
 
-
-
 }
-
-
-
-
 
